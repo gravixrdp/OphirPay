@@ -119,6 +119,7 @@ Runnable, dependency-free examples are in
 |---|---|---|
 | Node.js (ESM) | [`node/verify.mjs`](../examples/webhook-verification/node/verify.mjs) | `node verify.mjs --secret <secret> --signature <hex> --body-file body.json` |
 | Python 3 | [`python/verify.py`](../examples/webhook-verification/python/verify.py) | `python3 verify.py --secret <secret> --signature <hex> --body-file body.json` |
+| Go | [`go/verify.go`](../examples/webhook-verification/go/verify.go) | `go run verify.go --secret <secret> --signature <hex> --body-file body.json` |
 
 Both print `VALID` (exit 0) or `INVALID: <reason>` (exit 1), and both
 implement the canonical form above plus a configurable freshness window

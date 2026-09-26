@@ -7,6 +7,7 @@ the signed material and can be trusted for replay protection.
 
 - [`node/verify.mjs`](node/verify.mjs) — Node.js (ESM, no dependencies)
 - [`python/verify.py`](python/verify.py) — Python 3 (stdlib only)
+- [`go/verify.go`](go/verify.go) — Go (stdlib only)
 - [`sample-payload.json`](sample-payload.json) — sample signed payload
 
 Full guidance (canonical form, replay protection, pitfalls) lives in
@@ -27,6 +28,13 @@ node node/verify.mjs \
 
 # Python
 python3 python/verify.py \
+  --secret test-secret-0123456789 \
+  --signature 83ab64c58dadec406835ebd9b907b579cb89132098823ec66f2b96dd1ad84258 \
+  --timestamp 2026-08-14T00:00:00Z \
+  --body-file sample-payload.json
+
+# Go
+go run go/verify.go \
   --secret test-secret-0123456789 \
   --signature 83ab64c58dadec406835ebd9b907b579cb89132098823ec66f2b96dd1ad84258 \
   --timestamp 2026-08-14T00:00:00Z \
